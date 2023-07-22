@@ -16,15 +16,15 @@ export default (props: DefaultEventProps, username: string, difficulty: string):
         return;
     }
 
-    var lobby = getLatestLobby();
+    var lobby = getLatestLobby(difficulty);
 
     if (!lobby) {
         createLobby(difficulty);
-        lobby = getLatestLobby();
+        lobby = getLatestLobby(difficulty);
         joinLobby(lobby ? lobby.lobbyId : '', socket.id, username);
     } else if (lobby.players.length >= lobby.maxPlayers) {
         createLobby(difficulty);
-        lobby = getLatestLobby();
+        lobby = getLatestLobby(difficulty);
         joinLobby(lobby ? lobby.lobbyId : '', socket.id, username);
     } else {
         joinLobby(lobby?.lobbyId, socket.id, username);

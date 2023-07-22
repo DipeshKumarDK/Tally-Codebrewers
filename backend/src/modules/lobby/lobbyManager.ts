@@ -72,4 +72,9 @@ export const sendLobbyUpdate = ({ io }: DefaultEventProps, lobbyId: string | nul
 export const getPlayerOfSocket = (socketId: string): IPlayer | null =>
     getLobby(getLobbyIdOfPlayer(socketId))?.players.find(player => player.socketId === socketId) ?? null;
 
-export const getLatestLobby = (): ILobby | null => lobbies[lobbies.length - 1] ?? null;
+export const getLatestLobby = (difficulty: string): ILobby | null => {
+    const lobby = lobbies
+        .reverse()
+        .find(lobby => lobby.difficulty === difficulty && lobby.players.length < lobby.maxPlayers);
+    return lobby ? lobby : null;
+};

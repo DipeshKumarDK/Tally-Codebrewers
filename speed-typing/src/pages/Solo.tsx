@@ -7,7 +7,11 @@ import useEngine from "../hooks/useEngine";
 import { calculateAccuracyPercentage } from "../utils/helpers";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
-import { changeDifficultySolo, changeDuration } from "../actions/index";
+import {
+  changeDifficultySolo,
+  changeDuration,
+  changeSearchId,
+} from "../actions/index";
 
 const Solo = () => {
   const { words, typed, errors, state, restart, totalTyped } = useEngine();
@@ -21,11 +25,13 @@ const Solo = () => {
     setAllWords(words);
   }, [difficulty, words]);
 
-  useEffect(() => {
-    console.log("Words changed");
-  }, [words]);
-
   const dispatch = useDispatch();
+
+  var user = useSelector((state: any) => state.changeUser);
+
+  useEffect(() => {
+    dispatch(changeSearchId(user._id));
+  }, []);
 
   return (
     <div className="lg:w-3/4 pt-[50px] pb-[30px] solo">
@@ -109,7 +115,6 @@ const CountdownTimer = ({ timeLeft }: { timeLeft: number }) => {
       };
     }
   }, [timeLeft, totalTyped]);
-
   return (
     <h2 className="text-primary-400 font-medium text-center text-lg">
       Time: {timeLeft} sec

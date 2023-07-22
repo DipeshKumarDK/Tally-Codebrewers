@@ -8,7 +8,7 @@ dotenv.config();
 
 const DB = process.env.MONGO_URL;
 
-mongoose.connect(DB).then(()=>{
+mongoose.connect(DB).then(()=>{ 
     console.log("Success")
 }).catch((err)=>{
     console.log("Error")

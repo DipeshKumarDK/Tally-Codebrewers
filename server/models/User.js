@@ -8,6 +8,13 @@ const UserSchema = new mongoose.Schema({
         max:25,
         unique:true
     },
+    userid:{
+        type:String,
+        require:true,
+        min:3,
+        max:25,
+        unique:true
+    },
     speed:{
         type:Number,
         require:true,
