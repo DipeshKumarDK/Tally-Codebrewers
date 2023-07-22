@@ -9,7 +9,6 @@ import Lobby from "../components/Lobby";
 import Game from "../components/Game";
 import "../index.css";
 
-// export const socket = io(import.meta.env.VITE_SOCKET_ENDPOINT ?? '');
 export const socket = io("http://localhost:5000");
 
 export const GameStateContext = createContext<GameState | null>(null);

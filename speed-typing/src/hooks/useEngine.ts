@@ -7,9 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 export type State = "start" | "run" | "finish";
 
-
-// const myUser = useSelector((state<any>) => state.changeUser);
-
 const NUMBER_OF_WORDS = 100;
 const COUNTDOWN_SECONDS = 30;
 

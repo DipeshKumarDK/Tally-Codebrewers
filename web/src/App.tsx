@@ -25,14 +25,7 @@ const App: React.FC = () => {
 
     return (
         <div>
-            {/* <LobbyStateContext.Provider value={lobbyState}>
-                <GameStateContext.Provider value={gameState}>
-                    {!gameState && !lobbyState && <JoinLobby />}
-                    {(!gameState || gameState.isFinished) && lobbyState && <Lobby />}
-                    {gameState && !gameState.isFinished && <Game />}
-                </GameStateContext.Provider>
-            </LobbyStateContext.Provider> */}
-            <div className='text-white text-3xl'></div>
+            <p className='text-white text-3xl'>Hello</p>
         </div>
     );
 };

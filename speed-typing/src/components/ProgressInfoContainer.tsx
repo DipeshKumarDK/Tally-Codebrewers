@@ -1,61 +1,73 @@
-import React, { useContext } from 'react';
-import styles from '../styles/ProgressInfoContainer.module.scss';
-import { GameStateContext, socket } from '../pages/MainLobby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import React, { useContext, useEffect, useState } from "react";
+import styles from "../styles/ProgressInfoContainer.module.scss";
+import { GameStateContext, socket } from "../pages/MainLobby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import GeneratedWords from "../components/GeneratedWords";
+import UserTypings from "../components/UserTypings";
 
 interface Props {
-    currentTextPosition: number;
+  words: string;
+  typed: string;
+  timeLeft: number;
 }
 
-const ProgressInfoContainer: React.FC<Props> = ({ currentTextPosition }: Props) => {
-    const gameState = useContext(GameStateContext) ?? { text: '', players: [], gameStartTime: 0 };
-    const { text, players, gameStartTime } = gameState;
-    const player = players.find(player => player.socketId === socket.id);
+const ProgressInfoContainer: React.FC<Props> = ({
+  words,
+  typed,
+  timeLeft,
+}: Props) => {
+  const gameState = useContext(GameStateContext) ?? {
+    text: "",
+    players: [],
+    gameStartTime: 0,
+  };
+  const { text, players, gameStartTime } = gameState;
+  const player = players.find((player) => player.socketId === socket.id);
 
-    if (!player) return <></>;
+  if (!player) return <></>;
 
-    const timePassed = Math.floor(((player.isFinished ? player.finishTime : Date.now()) - gameStartTime) / 1000);
+  const [allWords, setAllWords] = useState(words);
 
-    return (
-        <section className={styles.container}>
-            {player.isFinished ? (
-                <div className={styles.top__finished}>
-                    <FontAwesomeIcon icon={faCheck} className={styles.finishedIcon} />
-                </div>
-            ) : (
-                <div className={styles.top}>
-                    <div className={styles.table}>
-                        <span className={styles.lightText}>
-                            <div>{text.substring(0, currentTextPosition)}</div>
-                        </span>
-                        <span className={styles.text}>{text[currentTextPosition]}</span>
-                        <span className={styles.text}>{text.substring(currentTextPosition + 1)}</span>
-                    </div>
-                </div>
-            )}
-            <div className={styles.bottom}>
-                <div>
-                    <span className={styles.text}>{player.typingSpeed}</span>
-                    <span className={styles.lightText}> K/min</span>
-                </div>
-                <div>
-                    <span className={styles.text}>{currentTextPosition}</span>
-                    <span className={styles.lightText}>/</span>
-                    <span className={styles.text}>{text.length}</span>
-                    <span className={styles.lightText}> letters typed</span>
-                </div>
-                <div>
-                    <span className={styles.text}>{Math.floor((currentTextPosition * 100) / text.length)}</span>
-                    <span className={styles.lightText}>% completed</span>
-                </div>
-                <div>
-                    <span className={styles.text}>{timePassed < 0 ? 0 : timePassed}</span>
-                    <span className={styles.lightText}>s passed</span>
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className={styles.container}>
+      {player.isFinished ? (
+        <div className={styles.top__finished}>
+          <FontAwesomeIcon icon={faCheck} className={styles.finishedIcon} />
+        </div>
+      ) : (
+        <div className="w-full">
+          <CountdownTimer timeLeft={timeLeft} />
+          <div className="border-2 border-slate-100 max-h-96 overflow-y-scroll p-8">
+            <WordsContainer>
+              <GeneratedWords key={allWords} words={allWords} />
+              <UserTypings
+                className="absolute inset-0"
+                words={allWords}
+                userInput={typed}
+              />
+            </WordsContainer>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+const WordsContainer = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="relative text-3xl leading-relaxed break-all mt-3 overflow-x-auto">
+      {children}
+    </div>
+  );
+};
+
+const CountdownTimer = ({ timeLeft }: { timeLeft: number }) => {
+  return (
+    <h2 className="text-primary-400 font-medium text-center text-lg">
+      Time: {timeLeft}
+    </h2>
+  );
 };
 
 export default ProgressInfoContainer;
