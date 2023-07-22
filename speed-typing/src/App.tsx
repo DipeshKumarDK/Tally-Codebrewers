@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./components/Navbar";
 import Solo from "./pages/Solo";
 import Profile from "./pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import MainLobby from "./pages/MainLobby";
+import MainLobby from "./pages/MainLobby"; 
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (

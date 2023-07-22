@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { changeUser } from "../actions/index";
+import { changeUser , changeSearchId } from "../actions/index";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
@@ -17,7 +17,8 @@ function Login() {
     const _user = JSON.parse(curr);
     if (curr !== null) {
       dispatch(changeUser(_user));
-      navigate("/home");
+      dispatch(changeSearchId(_user?.userid));
+      navigate("/solo");
     }
   };
 
@@ -34,6 +35,7 @@ function Login() {
     try {
       const res = await axios.post("/api/entry/login", user);
       dispatch(changeUser(res.data));
+      dispatch(changeSearchId(res.data?.userid));
       localStorage.removeItem("typo_user");
       localStorage.setItem("typo_user", JSON.stringify(res.data));
       navigate("/solo");

@@ -7,7 +7,8 @@ import useEngine from "../hooks/useEngine";
 import { calculateAccuracyPercentage } from "../utils/helpers";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useSelector, useDispatch } from "react-redux";
-import { changeDifficultySolo, changeDuration } from "../actions/index";
+import { changeDifficultySolo, changeDuration, changeSearchId } from "../actions/index";
+
 
 const Solo = () => {
   const { words, typed, errors, state, restart, totalTyped } = useEngine();
@@ -26,6 +27,13 @@ const Solo = () => {
   }, [words]);
 
   const dispatch = useDispatch();
+
+  var user = useSelector((state: any) => state.changeUser);
+
+  useEffect(() => {
+    dispatch(changeSearchId(user?.userid))
+  }, [])
+  
 
   return (
     <div className="lg:w-3/4 pt-[50px] pb-[30px] solo">

@@ -1,18 +1,42 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
 const Profile = () => {
+
+  const [profile, setProfile] = useState()
+
+  var id = useSelector((state: any) => state.changeSearchId);
+
+  console.log(id);
+
+  const handleClick = async () => {
+    try {
+      const res = await axios.get("/api/entry/search/dkydvksl");
+      console.log(res.data)
+      setProfile(res.data);
+    } catch (err) { 
+      window.alert("Something went wrong!");
+    }
+  };
+
+  useEffect(() => {
+    handleClick();
+  }, []);
+
+
   return (
     <div className="bg-white shadow-lg rounded-2xl md:w-2/3 w-full dark:bg-gray-800">
       <img
         alt="profil"
-        src="https://cdn.pixabay.com/photo/2023/06/01/13/12/background-8033597_640.png"
+        src="https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg"
         className="w-full mb-4 rounded-t-lg h-[400px]"
       />
       <div className="flex flex-col items-center justify-center p-4 -mt-[110px]">
         <a href="#" className="relative block">
           <img
             alt="profil"
-            src="https://cdn.pixabay.com/photo/2023/01/11/08/05/humboldt-penguin-7711121_640.jpg"
+            src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_640.jpg"
             className="mx-auto object-cover rounded-full h-[150px] w-[150px]  border-2 border-white dark:border-gray-800"
           />
         </a>
@@ -51,3 +75,4 @@ const Profile = () => {
 };
 
 export default Profile;
+

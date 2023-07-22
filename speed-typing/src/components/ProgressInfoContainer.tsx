@@ -22,7 +22,7 @@ const ProgressInfoContainer: React.FC<Props> = ({ words, typed }: Props) => {
 
   if (!player) return <></>;
 
-  const [allWords, setAllWords] = useState(words);
+  // const [allWords, setAllWords] = useState(words);
 
   return (
     <section className={styles.container}>
@@ -34,10 +34,10 @@ const ProgressInfoContainer: React.FC<Props> = ({ words, typed }: Props) => {
         <div className="w-full">
           <div className="border-2 border-slate-100 max-h-96 overflow-y-scroll p-8">
             <WordsContainer>
-              <GeneratedWords key={allWords} words={allWords} />
+              <GeneratedWords key={words} words={words} />
               <UserTypings
                 className="absolute inset-0"
-                words={allWords}
+                words={words}
                 userInput={typed}
               />
             </WordsContainer>

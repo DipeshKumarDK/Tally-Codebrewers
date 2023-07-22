@@ -25,3 +25,10 @@ export const changeWords = (words) => {
     words: words,
   };
 };
+
+export const changeSearchId = (id) => {
+  return {
+    type: "CURRID",
+    id: id,
+  };
+};
