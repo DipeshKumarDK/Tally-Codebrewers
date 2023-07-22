@@ -12,11 +12,13 @@ import leaveGame from './modules/game/events/leaveGame';
 const registerSocketEvents = (io: Server, socket: Socket): void => {
     const props: DefaultEventProps = { io, socket };
 
-    socket.on(SocketRequestType.LOBBY_JOIN, (username: string, lobbyId: string | null) =>
-        joinLobby(props, username, lobbyId),
+    socket.on(SocketRequestType.LOBBY_JOIN, (username: string, lobbyId: string | null, difficulty: string) =>
+        joinLobby(props, username, lobbyId, difficulty),
     );
 
-    socket.on(SocketRequestType.LOBBY_JOIN_PUBLIC, (username: string) => joinLobbyPublic(props, username));
+    socket.on(SocketRequestType.LOBBY_JOIN_PUBLIC, (username: string, difficulty: string) =>
+        joinLobbyPublic(props, username, difficulty),
+    );
 
     socket.on(SocketRequestType.LOBBY_TOGGLE_READY, () => toggleReady(props));
 

@@ -3,7 +3,7 @@ import { SocketResponseType } from '../../../types/SocketResponseType';
 import { createLobby, getLobby, joinLobby, sendLobbyUpdate } from '../lobbyManager';
 import { getGame } from '../../game/gameManager';
 
-export default (props: DefaultEventProps, username: string, lobbyId: string | null): void => {
+export default (props: DefaultEventProps, username: string, lobbyId: string | null, difficulty: string): void => {
     const { socket } = props;
 
     if (!username.match(/^.{1,30}$/)) {
@@ -29,7 +29,7 @@ export default (props: DefaultEventProps, username: string, lobbyId: string | nu
         }
     }
 
-    const lobby = getLobby(lobbyId) ?? createLobby();
+    const lobby = getLobby(lobbyId) ?? createLobby(difficulty);
     joinLobby(lobby.lobbyId, socket.id, username);
 
     socket.join(lobby.lobbyId);

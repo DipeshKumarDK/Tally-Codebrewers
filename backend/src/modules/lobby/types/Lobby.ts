@@ -5,4 +5,5 @@ export interface ILobby {
     players: IPlayer[];
     typedTexts: number[];
     maxPlayers: number;
+    difficulty: string;
 }

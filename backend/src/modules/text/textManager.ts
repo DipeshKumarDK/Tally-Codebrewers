@@ -1,4 +1,5 @@
 import { TEXTS } from './data/texts';
+import { DIFFICULT_TEXTS } from './data/difficultTexts';
 import { ILobby } from '../lobby/types/Lobby';
 
 export const chooseRandomText = (lobby: ILobby): string => {
@@ -8,10 +9,11 @@ export const chooseRandomText = (lobby: ILobby): string => {
 
     let index;
     do {
-        index = Math.floor(Math.random() * TEXTS.length);
+        index = Math.floor(Math.random() * (lobby.difficulty === 'hard' ? DIFFICULT_TEXTS.length : TEXTS.length));
     } while (lobby.typedTexts.includes(index));
 
     lobby.typedTexts.push(index);
 
-    return TEXTS[index] ?? '';
+    let ans = lobby.difficulty === 'hard' ? DIFFICULT_TEXTS[index] : TEXTS[index];
+    return ans ?? '';
 };

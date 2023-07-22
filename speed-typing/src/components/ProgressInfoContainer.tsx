@@ -22,8 +22,6 @@ const ProgressInfoContainer: React.FC<Props> = ({ words, typed }: Props) => {
 
   if (!player) return <></>;
 
-  const [allWords, setAllWords] = useState(words);
-
   return (
     <section className={styles.container}>
       {player.isFinished ? (
@@ -34,10 +32,10 @@ const ProgressInfoContainer: React.FC<Props> = ({ words, typed }: Props) => {
         <div className="w-full">
           <div className="border-2 border-slate-100 max-h-96 overflow-y-scroll p-8">
             <WordsContainer>
-              <GeneratedWords key={allWords} words={allWords} />
+              <GeneratedWords key={words} words={words} />
               <UserTypings
                 className="absolute inset-0"
-                words={allWords}
+                words={words}
                 userInput={typed}
               />
             </WordsContainer>
@@ -53,14 +51,6 @@ const WordsContainer = ({ children }: { children: React.ReactNode }) => {
     <div className="relative text-3xl leading-relaxed break-all mt-3 overflow-x-auto">
       {children}
     </div>
-  );
-};
-
-const CountdownTimer = ({ timeLeft }: { timeLeft: number }) => {
-  return (
-    <h2 className="text-primary-400 font-medium text-center text-lg">
-      Time: {timeLeft}
-    </h2>
   );
 };
 

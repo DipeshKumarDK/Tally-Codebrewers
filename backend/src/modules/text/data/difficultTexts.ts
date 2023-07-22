@@ -1,4 +1,4 @@
-export const TEXTS: string[] = [
+export const DIFFICULT_TEXTS: string[] = [
     'b2n3t rgu5y bdx43 a1wqg lN3Db 5ijm4 Y6h7n 2eK7v wqg23 f4Pn6 cKj34 v7NjH N3Klj a2t1g 6V2np 1D4kj 7YXp3 a6h7P F3vYb 9T4gL c8j5v l3P4k',
     'x6jg1 Z4qA3 sCtB1 v3Nh5 4g7Bd 5Ks4b k3P2n Y6Ij2 w4Kjg n8Gj3 q2Sx4 P2b1k X4c2l l6Dc1 j5H2G a2v1b q3N1g y4N6g F2V7b t3k2G',
     'b5c7k R3Lb2 m9n3k q2V5j y4H5j w6Rv1 u2Jn3 3g1Pb F3Sb2 c6K1j 8V7uN N5d3c T4b1c d6Tb5 w2Jh6 1N3j2 k4Bc3 N4D1k j7G1b 2n3k1',

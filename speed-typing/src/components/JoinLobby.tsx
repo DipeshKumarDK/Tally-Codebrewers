@@ -5,23 +5,25 @@ import { SocketRequestType } from "../type/SocketRequestType";
 import { SocketResponseType } from "../type/SocketResponseType";
 import Container from "./Container";
 import InputBox from "./InputBox";
+import SelectBox from "./SelectBox";
 import Button from "./Button";
 
 const JoinLobby: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [lobbyId, setLobbyId] = useState<string>("");
+  const [difficulty, setDifficulty] = useState<string>("easy");
 
   const [incorrectUsername, setIncorrectUsername] = useState<boolean>(false);
   const [lobbyNotFound, setLobbyNotFound] = useState<boolean>(false);
   const [gameOngoing, setGameOngoing] = useState<boolean>(false);
 
   const submit = () => {
-    socket.emit(SocketRequestType.LOBBY_JOIN, username, lobbyId);
+    socket.emit(SocketRequestType.LOBBY_JOIN, username, lobbyId, difficulty);
     setGameOngoing(false);
   };
 
   const submitPublic = () => {
-    socket.emit(SocketRequestType.LOBBY_JOIN_PUBLIC, username);
+    socket.emit(SocketRequestType.LOBBY_JOIN_PUBLIC, username, difficulty);
     setGameOngoing(false);
   };
 
@@ -61,6 +63,13 @@ const JoinLobby: React.FC = () => {
           }}
           length={5}
           error={lobbyNotFound}
+        />
+
+        <SelectBox
+          label={"DIFFICULTY"}
+          options={["easy", "hard"]}
+          value={difficulty}
+          onChange={(v: string) => setDifficulty(v)}
         />
 
         {gameOngoing && (

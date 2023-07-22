@@ -25,12 +25,13 @@ export const getLobby = (lobbyId: string | null): ILobby | null =>
 export const getLobbyIdOfPlayer = (socketId: string): string | null =>
     lobbies.find(lobby => lobby.players.some(player => player.socketId === socketId))?.lobbyId ?? null;
 
-export const createLobby = (): ILobby => {
+export const createLobby = (difficulty: string): ILobby => {
     const lobby: ILobby = {
         lobbyId: generateLobbyId(),
         players: [],
         typedTexts: [],
         maxPlayers: 4,
+        difficulty: difficulty,
     };
 
     lobbies.push(lobby);
