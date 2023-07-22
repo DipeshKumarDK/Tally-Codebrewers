@@ -1,277 +1,102 @@
 export const TEXTS: string[] = [
-    // https://en.wikipedia.org/wiki/SpaceX
-    'Space Exploration Technologies Corp. (SpaceX) is an American aerospace manufacturer and space transportation services company headquartered in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing space transportation costs to enable the colonization of Mars.',
-
-    // https://en.wikipedia.org/wiki/Tesla,_Inc.
-    "Tesla, Inc. is an American electric vehicle and clean energy company based in Palo Alto, California. Tesla's current products include electric cars, battery energy storage from home to grid scale, solar panels and solar roof tiles, as well as other related products and services.",
-
-    // https://en.wikipedia.org/wiki/Elon_Musk
-    'Elon Reeve Musk is a business magnate, industrial designer, and engineer. He is the founder, CEO, CTO, and chief designer of SpaceX; early investor, CEO, and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI.',
-
-    // https://en.wikipedia.org/wiki/Google
-    'Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online advertising technologies, a search engine, cloud computing, software, and hardware. It is considered one of the Big Five technology companies in the U.S. information technology industry, alongside Amazon, Facebook, Apple, and Microsoft.',
-
-    // https://en.wikipedia.org/wiki/Amazon_(company)
-    'Amazon.com, Inc. is an American multinational technology company based in Seattle, Washington, which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence.',
-
-    // https://en.wikipedia.org/wiki/Apple_Inc.
-    'Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services.',
-
-    // https://en.wikipedia.org/wiki/Microsoft
-    'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.',
-
-    // https://en.wikipedia.org/wiki/Microsoft_Windows
-    'Microsoft Windows, commonly referred to as Windows, is a group of several proprietary graphical operating system families, all of which are developed and marketed by Microsoft. Each family caters to a certain sector of the computing industry.',
-
-    // https://en.wikipedia.org/wiki/Android_(operating_system)
-    'Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets.',
-
-    // https://en.wikipedia.org/wiki/IOS
-    "iOS (formerly iPhone OS) is a mobile operating system created and developed by Apple Inc. exclusively for its hardware. It is the operating system that powers many of the company's mobile devices.",
-
-    // https://en.wikipedia.org/wiki/Starlink
-    'Starlink is a satellite internet constellation being constructed by SpaceX providing satellite Internet access. The constellation will consist of thousands of mass-produced small satellites in low Earth orbit (LEO), working in combination with ground transceivers.',
-
-    // https://en.wikipedia.org/wiki/SpaceX_Starship
-    'The SpaceX Starship system is a proposed fully reusable, two-stage-to-orbit super heavy-lift launch vehicle under development by SpaceX. The system is composed of a booster stage, named Super Heavy, and a second stage, also referred to as Starship.',
-
-    // https://en.wikipedia.org/wiki/Netflix
-    'Netflix, Inc. is an American over-the-top content platform and production company headquartered in Los Gatos, California. Netflix was founded in Scotts Valley, California.',
-
-    // https://en.wikipedia.org/wiki/YouTube
-    'YouTube is an American online video-sharing platform headquartered in San Bruno, California. The service, created in February 2005 by three former PayPal employees was bought by Google in November 2006',
-
-    // https://en.wikipedia.org/wiki/Artificial_intelligence
-    'Artificial intelligence (AI) is intelligence demonstrated by machines, unlike the natural intelligence displayed by humans and animals, which involves consciousness and emotionality.',
-
-    // https://en.wikipedia.org/wiki/Video_game
-    'A video game is an electronic game that involves interaction with a user interface or input device - such as a joystick, controller, keyboard, or motion sensing device - to generate visual feedback for a player.',
-
-    // https://en.wikipedia.org/wiki/Golden_Gate_Bridge
-    'The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the one-mile-wide (1.6 km) strait connecting San Francisco Bay and the Pacific Ocean.',
-
-    // https://en.wikipedia.org/wiki/Spotify
-    'Spotify is a Swedish audio streaming and media services provider, founded in 2006 by Daniel Ek. Spotify is headquartered in Stockholm, Sweden.',
-
-    // https://en.wikipedia.org/wiki/Adobe_Inc.
-    'Adobe Inc. is an American multinational computer software company. It has historically specialized in software for the creation and publication of a wide range of content, including graphics, photography, illustration, animation, multimedia/video, motion pictures and print.',
-
-    // https://en.wikipedia.org/wiki/Discord_(software)
-    'Discord is a VoIP, instant messaging and digital distribution platform designed for creating communities. Users communicate with voice calls, video calls, text messaging, media and files in private chats or as part of communities called servers.',
-
-    // https://en.wikipedia.org/wiki/Amazon_Web_Services
-    'Amazon Web Services (AWS) is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis.',
-
-    // https://en.wikipedia.org/wiki/Steam_(service)
-    'Steam is a video game digital distribution service by Valve. It was launched as a standalone software client in September 2003 as a way for Valve to provide automatic updates for their games, and expanded to include games from third-party publishers.',
-
-    // https://en.wikipedia.org/wiki/Unity_(game_engine)
-    'Unity is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005. The engine can be used to create three-dimensional, two-dimensional, virtual reality, and augmented reality games, as well as simulations and other experiences.',
-
-    // https://en.wikipedia.org/wiki/Internet
-    'The Internet is the global system of interconnected computer networks that uses the Internet protocol suite (TCP/IP) to communicate between networks and devices.',
-
-    // https://en.wikipedia.org/wiki/Computer_science
-    'Computer science involves the study of computation, automation, and information. Computer science spans theoretical disciplines (such as algorithms, theory of computation, and information theory) to practical disciplines (including the design and implementation of hardware and software).',
-
-    // https://en.wikipedia.org/wiki/Twitch_(service)
-    'Twitch is an American video live streaming service that focuses on video game live streaming, including broadcasts of esports competitions, in addition to offering music broadcasts, creative content, and "in real life" streams. It is operated by Twitch Interactive, a subsidiary of Amazon.com, Inc.',
-
-    // https://en.wikipedia.org/wiki/Linux
-    'Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution.',
-
-    // https://en.wikipedia.org/wiki/Server_(computing)
-    'In computing, a server is a piece of computer hardware or software (computer program) that provides functionality for other programs or devices, called "clients". This architecture is called the client–server model.',
-
-    // https://en.wikipedia.org/wiki/Web_browser
-    "A web browser (also referred to as an Internet browser or simply a browser) is application software for accessing the World Wide Web. When a user requests a web page from a particular website, the web browser retrieves the necessary content from a web server and then displays the page on the user's device.",
-
-    // https://en.wikipedia.org/wiki/World_Wide_Web
-    'The World Wide Web (WWW), commonly known as the Web, is an information system where documents and other web resources are identified by Uniform Resource Locators (URLs), which may be interlinked by hyperlinks, and are accessible over the Internet.',
-
-    // https://en.wikipedia.org/wiki/Programming_language
-    'A programming language is any set of rules that converts strings, or graphical program elements in the case of visual programming languages, to various kinds of machine code output. Programming languages are one kind of computer language, and are used in computer programming to implement algorithms.',
-
-    // https://en.wikipedia.org/wiki/Software
-    'Software is a collection of instructions that tell a computer how to work. This is in contrast to hardware, from which the system is built and actually performs the work.',
-
-    // https://en.wikipedia.org/wiki/Computer_hardware
-    'Computer hardware includes the physical parts of a computer, such as the case, central processing unit (CPU), monitor, mouse, keyboard, computer data storage, graphics card, sound card, speakers and motherboard.',
-
-    // https://en.wikipedia.org/wiki/Central_processing_unit
-    'A central processing unit (CPU), also called a central processor, main processor or just processor, is the electronic circuitry that executes instructions comprising a computer program.',
-
-    // https://en.wikipedia.org/wiki/Graphics_processing_unit
-    'A graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.',
-
-    // https://en.wikipedia.org/wiki/Cloud_computing
-    'Cloud computing is the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user. Large clouds often have functions distributed over multiple locations, each location being a data center.',
-
-    // https://en.wikipedia.org/wiki/Cryptography
-    'Cryptography, or cryptology, is the practice and study of techniques for secure communication in the presence of adversarial behavior. More generally, cryptography is about constructing and analyzing protocols that prevent third parties or the public from reading private messages.',
-
-    // https://en.wikipedia.org/wiki/Smartphone
-    'A smartphone is a computing platform portable device that combines mobile telephone and computing functions into one unit. They are distinguished from feature phones by their stronger hardware capabilities and extensive mobile operating systems.',
-
-    // https://en.wikipedia.org/wiki/IPhone
-    "The iPhone is a line of smartphones designed and marketed by Apple Inc. that use Apple's iOS mobile operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs on January 9, 2007.",
-
-    // https://en.wikipedia.org/wiki/System_on_a_chip
-    'A system on a chip is an integrated circuit that integrates all or most components of a computer or other electronic system. These components almost always include a central processing unit (CPU), memory, input/output ports and secondary storage, often alongside other components such as radio modems and a graphics processing unit (GPU) – all on a single substrate or microchip.',
-
-    // https://en.wikipedia.org/wiki/Die_(integrated_circuit)
-    'A die, in the context of integrated circuits, is a small block of semiconducting material on which a given functional circuit is fabricated. Typically, integrated circuits are produced in large batches on a single wafer of electronic-grade silicon (EGS) or other semiconductor through processes such as photolithography.',
-
-    // https://en.wikipedia.org/wiki/Solar_cell
-    'A solar cell, or photovoltaic cell, is an electrical device that converts the energy of light directly into electricity by the photovoltaic effect, which is a physical and chemical phenomenon.',
-
-    // https://en.wikipedia.org/wiki/Renewable_energy
-    'Renewable energy is energy that is collected from renewable resources that are naturally replenished on a human timescale. It includes sources such as sunlight, wind, rain, tides, waves, and geothermal heat.',
-
-    // https://en.wikipedia.org/wiki/Climate_change
-    "Contemporary climate change includes both global warming and its impacts on Earth's weather patterns. There have been previous periods of climate change, but the current changes are distinctly more rapid and not due to natural causes. Instead, they are caused by the emission of greenhouse gases, mostly carbon dioxide (CO2) and methane.",
-
-    // https://en.wikipedia.org/wiki/Outer_space
-    'Outer space, commonly shortened to space, is the expanse that exists beyond Earth and its atmosphere and between celestial bodies.',
-
-    // https://en.wikipedia.org/wiki/Solar_System
-    'The Solar System is the gravitationally bound system of the Sun and the objects that orbit it. Of the bodies that orbit the Sun directly, the largest are the four gas and ice giants and the four terrestrial planets, followed by an unknown number of dwarf planets and innumerable small Solar System bodies.',
-
-    // https://en.wikipedia.org/wiki/Saturn
-    'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine and a half times that of Earth. It only has one-eighth the average density of Earth; however, with its larger volume, Saturn is over 95 times more massive.',
-
-    // https://en.wikipedia.org/wiki/Jupiter
-    'Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.',
-
-    // https://en.wikipedia.org/wiki/Moon
-    "The Moon is Earth's only natural satellite. At about one-quarter the diameter of Earth (comparable to the width of Australia), it is the largest natural satellite in the Solar System relative to the size of a major planet, the fifth largest satellite in the Solar System overall, and larger than any known dwarf planet.",
-
-    // https://en.wikipedia.org/wiki/Ray_tracing_(graphics)
-    'In 3D computer graphics, ray tracing is a technique for modeling light transport for use in a wide variety of rendering algorithms for generating digital images.',
-
-    // https://en.wikipedia.org/wiki/Sound
-    'In physics, sound is a vibration that propagates as an acoustic wave, through a transmission medium such as a gas, liquid or solid. In human physiology and psychology, sound is the reception of such waves and their perception by the brain.',
-
-    // https://en.wikipedia.org/wiki/Black_hole
-    'A black hole is a region of spacetime where gravity is so strong that nothing - no particles or even electromagnetic radiation such as light - can escape from it.',
-
-    // https://en.wikipedia.org/wiki/Continent
-    'A continent is any of several large landmasses. Generally identified by convention rather than any strict criteria, up to seven geographical regions are commonly regarded as continents.',
-
-    // https://en.wikipedia.org/wiki/Garbage_patch
-    'A garbage patch is a gyre of marine debris particles caused by the effects of ocean currents and increasing plastic pollution by human populations.',
-
-    // https://en.wikipedia.org/wiki/Ecosystem
-    'An ecosystem (or ecological system) consists of all the organisms and the physical environment with which they interact. These biotic and abiotic components are linked together through nutrient cycles and energy flows.',
-
-    // https://en.wikipedia.org/wiki/Natural_disaster
-    'A natural disaster is a major adverse event resulting from natural processes of the Earth; examples include firestorms, duststorms, floods, hurricanes, tornadoes, volcanic eruptions, earthquakes, tsunamis, storms, and other geologic processes.',
-
-    // https://en.wikipedia.org/wiki/Earth
-    'Earth is the third planet from the Sun and the only astronomical object known to harbor life. While large amounts of water can be found throughout the Solar System, only Earth sustains liquid surface water.',
-
-    // https://en.wikipedia.org/wiki/International_Space_Station
-    'The International Space Station (ISS) is a modular space station (habitable artificial satellite) in low Earth orbit. It is a multinational collaborative project involving five participating space agencies: NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada).',
-
-    // https://en.wikipedia.org/wiki/Satellite
-    "In the context of spaceflight, a satellite is an object that has been intentionally placed into orbit. These objects are called artificial satellites to distinguish them from natural satellites such as Earth's Moon.",
-
-    // https://en.wikipedia.org/wiki/Nuclear_fusion
-    'Nuclear fusion is a reaction in which two or more atomic nuclei are combined to form one or more different atomic nuclei and subatomic particles (neutrons or protons). The difference in mass between the reactants and products is manifested as either the release or the absorption of energy.',
-
-    // https://en.wikipedia.org/wiki/Atom
-    'An atom is the smallest unit of ordinary matter that forms a chemical element. Every solid, liquid, gas, and plasma is composed of neutral or ionized atoms. Atoms are extremely small, typically around 100 picometers across.',
-
-    // https://en.wikipedia.org/wiki/Mathematics
-    'Mathematics is an area of knowledge, which includes the study of such topics as numbers (arithmetic and number theory), formulas and related structures (algebra), shapes and spaces in which they are contained (geometry), and quantities and their changes (calculus and analysis).',
-
-    // https://en.wikipedia.org/wiki/Spacetime
-    'In physics, spacetime is any mathematical model which fuses the three dimensions of space and the one dimension of time into a single four-dimensional manifold. Spacetime diagrams can be used to visualize relativistic effects.',
-
-    // https://en.wikipedia.org/wiki/Neutron_star
-    'A neutron star is the collapsed core of a massive supergiant star, which had a total mass of between 10 and 25 solar masses, possibly more if the star was especially metal-rich.',
-
-    // https://en.wikipedia.org/wiki/Supernova
-    'A supernova (pl. supernovae or supernovas) is a powerful and luminous stellar explosion. This transient astronomical event occurs during the last evolutionary stages of a massive star or when a white dwarf is triggered into runaway nuclear fusion.',
-
-    // https://en.wikipedia.org/wiki/James_Webb_Space_Telescope
-    'The James Webb Space Telescope is an orbiting spacecraft designed to observe some of the oldest and most distant objects and events in the Universe, including the first stars and formation of the first galaxies, and to provide detailed atmospheric characterization of potentially habitable exoplanets.',
-
-    // https://en.wikipedia.org/wiki/Hubble_Space_Telescope
-    'The Hubble Space Telescope is a space telescope that was launched into low Earth orbit in 1990 and remains in operation. It was not the first space telescope, but it is one of the largest and most versatile, renowned both as a vital research tool and as a public relations boon for astronomy.',
-
-    // https://en.wikipedia.org/wiki/Galaxy
-    'A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar gas, dust, and dark matter. The word is derived from the Greek galaxias, literally "milky", a reference to the Milky Way galaxy that contains the Solar System.',
-
-    // https://en.wikipedia.org/wiki/Night_sky
-    'The term night sky, usually associated with astronomy from Earth, refers to the nighttime appearance of celestial objects like stars, planets, and the Moon, which are visible in a clear sky between sunset and sunrise, when the Sun is below the horizon.',
-
-    // https://en.wikipedia.org/wiki/Color
-    'Color or colour is the visual perceptual property corresponding in humans to the categories called blue, green, red, etc. Color derives from the spectrum of light interacting in the eye with the spectral sensitivities of the light receptors.',
-
-    // https://en.wikipedia.org/wiki/3D_printing
-    '3D printing, or additive manufacturing, is the construction of a three-dimensional object from a CAD model or a digital 3D model. The term "3D printing" can refer to a variety of processes in which material is deposited, joined or solidified under computer control to create a three-dimensional object.',
-
-    // https://en.wikipedia.org/wiki/Hyperloop
-    'A Hyperloop is a proposed high-speed transportation system for both passenger and freight transport.The term was coined by Elon Musk to describe the modern open-source project originally conceived in 1799.',
-
-    // https://en.wikipedia.org/wiki/Technology
-    'Technology ("science of craft") is the sum of any techniques, skills, methods, and processes used in the production of goods or services or in the accomplishment of objectives, such as scientific investigation.',
-
-    // https://en.wikipedia.org/wiki/Mountain
-    "A mountain is an elevated portion of the Earth's crust, generally with steep sides that show significant exposed bedrock. A mountain differs from a plateau in having a limited summit area, and is larger than a hill, typically rising at least 300 metres above the surrounding land.",
-
-    // https://en.wikipedia.org/wiki/Alps
-    'The Alps are the highest and most extensive mountain range system that lies entirely in Europe, stretching approximately 1,200 km across eight Alpine countries.',
-
-    // https://en.wikipedia.org/wiki/Music
-    'Music is the art of arranging sounds in time through the elements of melody, harmony, rhythm, and timbre. It is one of the universal cultural aspects of all human societies.',
-
-    // https://en.wikipedia.org/wiki/Glacier
-    'A glacier is a persistent body of dense ice that is constantly moving under its own weight. A glacier forms where the accumulation of snow exceeds its ablation over many years, often centuries.',
-
-    // https://en.wikipedia.org/wiki/Pacific_Crest_Trail
-    'The Pacific Crest Trail (PCT), officially designated as the Pacific Crest National Scenic Trail, is a long-distance hiking and equestrian trail closely aligned with the highest portion of the Cascade and Sierra Nevada mountain ranges, which lie 160 to 240 km east of the U.S. Pacific coast.',
-
-    // https://en.wikipedia.org/wiki/National_park
-    'A national park is a natural park in use for conservation purposes, created and protected by national governments. Often it is a reserve of natural, semi-natural, or developed land that a sovereign state declares or owns.',
-
-    // https://en.wikipedia.org/wiki/Silicon_Valley
-    'Silicon Valley is a region in Northern California that serves as a global center for high technology and innovation. Located in the southern part of the San Francisco Bay Area, it corresponds roughly to the geographical Santa Clara Valley.',
-
-    // https://en.wikipedia.org/wiki/Light
-    'Light or visible light is electromagnetic radiation within the portion of the electromagnetic spectrum that is perceived by the human eye.',
-
-    // https://en.wikipedia.org/wiki/Laptop
-    'A laptop is a small, portable personal computer with a screen and alphanumeric keyboard. These typically have a clam shell form factor with the screen mounted on the inside of the upper lid and the keyboard on the inside of the lower lid.',
-
-    // https://en.wikipedia.org/wiki/Encryption
-    'In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext.',
-
-    // https://en.wikipedia.org/wiki/Human_brain
-    'The human brain is the central organ of the human nervous system, and with the spinal cord makes up the central nervous system.',
-
-    // https://en.wikipedia.org/wiki/Social_media
-    'Social media are interactive technologies that facilitate the creation and sharing of information, ideas, interests, and other forms of expression through virtual communities and networks.',
-
-    // https://en.wikipedia.org/wiki/Film
-    'A film, also called a movie, motion picture or moving picture, is a work of visual art used to simulate experiences that communicate ideas, stories, perceptions, feelings, beauty, or atmosphere through the use of moving images.',
-
-    // https://en.wikipedia.org/wiki/Rendering_(computer_graphics)
-    'Rendering or image synthesis is the process of generating a photorealistic or non-photorealistic image from a 2D or model by means of a computer program. The resulting image is referred to as the render.',
-
-    // https://en.wikipedia.org/wiki/3D_modeling
-    'In 3D computer graphics, 3D modeling is the process of developing a mathematical coordinate-based representation of any surface of an object in three dimensions via specialized software by manipulating edges, vertices, and polygons in a simulated 3D space.',
-
-    // https://en.wikipedia.org/wiki/Permafrost
-    'Permafrost is ground that continuously remains below 0 degrees Celsius for two or more years, located on land or under the ocean. Most common in the Northern Hemisphere, around 15% of the Northern Hemisphere or 11% of the global surface is underlain by permafrost.',
-
-    // https://en.wikipedia.org/wiki/Summer
-    'Summer is the hottest of the four temperate seasons, occurring after spring and before autumn. At or centred on the summer solstice, the earliest sunrise and latest sunset occurs, daylight hours are longest and dark hours are shortest, with day length decreasing as the season progresses after the solstice.',
-
-    // https://en.wikipedia.org/wiki/Season
-    "A season is a division of the year based on changes in weather, ecology, and the number of daylight hours in a given region. On Earth, seasons are the result of Earth's orbit around the Sun and Earth's axial tilt relative to the ecliptic plane.",
-
-    // https://en.wikipedia.org/wiki/SpinLaunch
-    'SpinLaunch is a spaceflight technology development company working on mass accelerator technology to move payloads to space.',
+    'the quick brown fox jumps over the lazy dog and into the woods where it explores the wilderness and finds a cozy den to rest',
+    'a peaceful stream flows through the green valley as the birds chirp happily on the branches of the tall trees above',
+    'in the distant horizon, a faint rainbow appears, adding colors to the picturesque landscape',
+    'the gentle breeze caresses the flowers, spreading their sweet fragrance across the meadow',
+    'as the sun sets, the sky is painted with hues of orange, pink, and purple, creating a breathtaking view',
+    'on a starry night, the moon shines brightly, guiding travelers on their journey through the dark',
+    'the sound of crickets fills the air, creating a soothing melody for those who listen attentively',
+    'in the heart of the city, life is bustling with people hurrying to their destinations and cars honking in the traffic',
+    'the city lights create a mesmerizing display, illuminating the streets and buildings with their vibrant glow',
+    'amidst the chaos, there is a sense of unity as people from all walks of life come together as one community',
+    'the city never sleeps, with activities and events happening round the clock, keeping it alive and vibrant',
+    "away from the city's hustle and bustle, lies a serene village where time seems to move at a slower pace",
+    'the villagers lead a simple life, connected to nature and appreciating its beauty in every aspect',
+    'the fields stretch far and wide, yielding bountiful crops that sustain the village and its inhabitants',
+    'a river flows gently through the village, providing water for irrigation and a peaceful place to relax',
+    'the village children play joyfully, running through the green fields and laughing with innocent delight',
+    'the village elders share wisdom and stories, passing down traditions from one generation to another',
+    'as the night falls, the village settles into a calm ambiance, with the stars shining brightly in the dark sky',
+    'the chirping of crickets lulls the villagers to sleep, embracing them in a comforting embrace of nature',
+    'on a clear night, the milky way can be seen, a dazzling display of stars in the vast expanse of the universe',
+    'beyond our planet, there are countless galaxies, each with its unique wonders and mysteries waiting to be explored',
+    'astronauts venture into space, defying gravity to discover the secrets of the cosmos and broaden our horizons',
+    'the universe is ever-expanding, with celestial bodies moving through space with grace and precision',
+    'the beauty of the cosmos is awe-inspiring, leaving us humbled and curious about our place in the grand scheme of things',
+    'back on earth, the oceans cover a significant part of our planet, harboring diverse marine life and enchanting creatures',
+    'whales, the giants of the sea, majestically glide through the deep waters, captivating observers with their elegance',
+    'schools of colorful fish dance around coral reefs, creating a vibrant underwater world of beauty and life',
+    'turtles slowly make their way across sandy beaches to lay their eggs, continuing the cycle of life and survival',
+    'the ocean currents connect distant shores, carrying nutrients and life across vast distances',
+    'beyond the oceans, there are vast continents with diverse landscapes and climates, each home to unique flora and fauna',
+    'dense rainforests are a treasure trove of biodiversity, hosting countless species of plants and animals',
+    'the mighty mountains rise high, with snow-capped peaks and challenging terrains that test human perseverance',
+    'deep canyons and valleys carve the earth, telling stories of the passage of time and geological wonders',
+    'vast deserts stretch as far as the eye can see, where life adapts to survive the harsh conditions',
+    'the polar regions are icy realms, inhabited by polar bears, penguins, and other animals adapted to the extreme cold',
+    'as humans, we are part of this intricate web of life, responsible for preserving the planet for future generations',
+    'we must strive to protect and conserve our environment, reducing our ecological footprint and promoting sustainability',
+    'education is a powerful tool that empowers individuals, providing opportunities for personal growth and success',
+    'knowledge is a never-ending journey, with every new piece of information expanding our understanding of the world',
+    "curiosity fuels the quest for knowledge, encouraging us to ask questions and seek answers to life's mysteries",
+    'learning is not limited to the classroom; it is a lifelong process that takes place through various experiences',
+    'the arts, including music, literature, and visual arts, enrich our lives, providing a means of expression and reflection',
+    'music has the power to evoke emotions, transporting us to different realms and connecting us with our feelings',
+    'literature offers a window into different cultures, perspectives, and time periods, broadening our worldview',
+    'visual arts capture moments and emotions, allowing us to appreciate the beauty and complexity of the human experience',
+    'technology has revolutionized the way we live, making communication faster and connecting people across the globe',
+    'the internet is a vast virtual world, offering a wealth of information and opportunities for communication and collaboration',
+    'social media platforms enable us to connect with friends, family, and like-minded individuals, transcending geographical boundaries',
+    'in the digital age, cybersecurity becomes paramount, protecting our personal information and online presence',
+    'the world of work is ever-changing, with new industries and career paths emerging in response to technological advancements',
+    'artificial intelligence and automation are reshaping the job market, requiring adaptability and lifelong learning from workers',
+    'entrepreneurship empowers individuals to pursue their passions and ideas, creating innovative solutions to societal challenges',
+    'business and commerce drive economies, with companies contributing to growth, employment, and societal progress',
+    'globalization has interconnected economies and cultures, facilitating the exchange of goods, services, and ideas',
+    'diverse cultures enrich our global society, promoting understanding, tolerance, and acceptance among people',
+    'language is a bridge that connects individuals from different linguistic backgrounds, fostering communication and unity',
+    'cultural heritage is a treasure that reflects our history, traditions, and values, passing down wisdom from generation to generation',
+    'sports and physical activities promote physical and mental well-being, instilling discipline, teamwork, and determination',
+    'in the realm of sports, athletes push their limits, achieving feats that inspire and capture the imagination of millions',
+    'the Olympics, a symbol of international unity, bring athletes from around the world together in the spirit of competition and friendship',
+    'the pursuit of health and wellness is a lifelong journey, with exercise, nutrition, and mindfulness contributing to a balanced lifestyle',
+    'medical advancements have extended human lifespan and improved the quality of life for many, battling diseases and ailments',
+    'healthcare professionals dedicate their lives to caring for others, providing essential services to those in need',
+    'in times of crisis, such as natural disasters or pandemics, humanity comes together to support and uplift one another',
+    'acts of kindness and generosity are gestures that brighten the lives of others, spreading positivity and hope',
+    'volunteers and nonprofit organizations play a crucial role in addressing social issues and advocating for positive change',
+    'children are the future, and investing in their education and well-being ensures a promising and brighter tomorrow',
+    'families are the foundation of society, offering love, support, and stability to their members',
+    'friends are like stars that brighten our lives, providing companionship and laughter on the journey of life',
+    'love is a powerful force that binds us together, transcending borders and cultural differences',
+    'compassion and empathy are qualities that connect us on a deeper level, fostering understanding and unity among individuals',
+    'forgiveness is a liberating act that heals wounds and allows individuals to move forward with grace and resilience',
+    'facing challenges and overcoming adversity are essential aspects of personal growth and self-discovery',
+    'resilience is a characteristic that enables individuals to bounce back from setbacks, stronger and wiser than before',
+    'self-care and self-reflection are practices that promote mental well-being and personal development',
+    'mindfulness is the art of living in the present moment, appreciating the beauty and simplicity of the now',
+    'the power of gratitude lies in acknowledging the blessings and abundance in our lives, cultivating a positive outlook',
+    'laughter is a universal language that brings joy and happiness to people of all ages and backgrounds',
+    "in the realm of art, imagination knows no bounds, with artists creating worlds beyond reality's constraints",
+    'creativity is an expression of the human spirit, igniting innovation and progress in various fields',
+    'poetry weaves words into verses that touch the soul, evoking emotions and painting vivid imagery',
+    'history reveals our collective past, shaping our identities and offering lessons for the future',
+    'the study of science and technology unravels the mysteries of the universe and empowers humanity with knowledge',
+    'the pursuit of justice and equality underpins the principles of a just and fair society',
+    'democracy empowers citizens to participate in governance, ensuring their voices are heard and represented',
+    'leadership is a quality that inspires and guides others toward shared goals and visions',
+    'mentorship is a gift that imparts wisdom and guidance, nurturing the potential of future generations',
+    'celebration and festivities mark special occasions, fostering a sense of community and shared joy',
+    'the human spirit is resilient and enduring, transcending challenges and striving for a better tomorrow',
+    'in times of sorrow and loss, compassion and support from others provide solace and comfort',
+    'nature is a source of wonder and inspiration, inviting us to connect with its beauty and embrace its wisdom',
+    'the beauty of simplicity lies in its elegance, showcasing the essence of life and its intrinsic value',
+    'moments of solitude offer space for introspection and self-discovery, nurturing a deeper understanding of oneself',
+    "a grateful heart radiates positive energy, attracting abundance and blessings into one's life",
+    'growth and transformation are part of the human experience, leading us on a path of continuous evolution',
+    'the journey of life is filled with surprises and adventures, each offering an opportunity for growth and learning',
+    'the interconnectedness of all living beings reminds us of our responsibility to care for the environment and its inhabitants',
+    "resilience and adaptability enable us to weather life's storms and emerge stronger on the other side",
+    'the power of dreams lies in their ability to ignite passion and determination, propelling us toward our aspirations',
+    'life is a canvas, and we are the artists, painting our stories with colors of love, hope, and purpose',
 ];

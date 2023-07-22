@@ -27,9 +27,7 @@ const registerSocketEvents = (io: Server, socket: Socket): void => {
         leaveGame(props);
     });
 
-    socket.on(SocketRequestType.GAME_UPDATE, (currentTextPos: number, words: string) =>
-        gameUpdate(props, currentTextPos, words),
-    );
+    socket.on(SocketRequestType.GAME_UPDATE, (currentTextPos: number) => gameUpdate(props, currentTextPos));
 };
 
 export default registerSocketEvents;

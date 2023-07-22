@@ -9,14 +9,9 @@ import UserTypings from "../components/UserTypings";
 interface Props {
   words: string;
   typed: string;
-  timeLeft: number;
 }
 
-const ProgressInfoContainer: React.FC<Props> = ({
-  words,
-  typed,
-  timeLeft,
-}: Props) => {
+const ProgressInfoContainer: React.FC<Props> = ({ words, typed }: Props) => {
   const gameState = useContext(GameStateContext) ?? {
     text: "",
     players: [],
@@ -37,7 +32,6 @@ const ProgressInfoContainer: React.FC<Props> = ({
         </div>
       ) : (
         <div className="w-full">
-          <CountdownTimer timeLeft={timeLeft} />
           <div className="border-2 border-slate-100 max-h-96 overflow-y-scroll p-8">
             <WordsContainer>
               <GeneratedWords key={allWords} words={allWords} />

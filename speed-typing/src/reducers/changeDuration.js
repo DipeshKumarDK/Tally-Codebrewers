@@ -1,11 +1,12 @@
+const initialState = 30;
 
-const initialState = null;
+const changeDuration = (state = initialState, action) => {
+  switch (action.type) {
+    case "CURRDURATION":
+      return action.expense;
+    default:
+      return state;
+  }
+};
 
-const changeDuration = (state = initialState , action) => {
-    switch(action.type){
-        case "CURRDURATION": return action.expense;
-        default: return state;
-    }
-}
-
-export default changeDuration; 
+export default changeDuration;

@@ -8,20 +8,20 @@ import WinInfo from "./WinInfo";
 import useEngine from "../hooks/useEngine";
 import Results from "../components/Results";
 import { calculateAccuracyPercentage } from "../utils/helpers";
+import { useSelector } from "react-redux";
 
 const PLAYER_COLORS = ["#74B9FF", "#83A868", "#FCAC6F", "#DF4A70"];
 
 const Game: React.FC = () => {
   const gameState = useContext(GameStateContext);
 
-  const { words, typed, timeLeft, errors, state, restart, totalTyped } =
-    useEngine();
+  const { typed, timeLeft, errors, state, restart, totalTyped } = useEngine();
 
   const [countdown, setCountdown] = useState<number>(-1);
 
   useEffect(() => {
     let temp = totalTyped - 1;
-    socket.emit(SocketRequestType.GAME_UPDATE, temp, words);
+    socket.emit(SocketRequestType.GAME_UPDATE, temp);
   }, [totalTyped]);
 
   useEffect(() => {
@@ -64,11 +64,7 @@ const Game: React.FC = () => {
 
       {countdown === -1 ? (
         <div className={styles.typingSpace}>
-          <ProgressInfoContainer
-            words={gameState.text}
-            typed={typed}
-            timeLeft={timeLeft}
-          />
+          <ProgressInfoContainer words={gameState.text} typed={typed} />
         </div>
       ) : null}
 
@@ -87,13 +83,7 @@ const Game: React.FC = () => {
         ))}
       </div>
 
-      <Results
-        className="mt-10"
-        state={state}
-        errors={errors}
-        accuracyPercentage={calculateAccuracyPercentage(errors, totalTyped)}
-        total={totalTyped}
-      />
+      {gameState.isFinished && <WinInfo />}
     </main>
   );
 };

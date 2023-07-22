@@ -11,10 +11,12 @@ const NUMBER_OF_WORDS = 100;
 const COUNTDOWN_SECONDS = 30;
 
 const useEngine = () => {
+  var difficulty = useSelector((state: any) => state.changeDifficultySolo);
+
   const [state, setState] = useState<State>("start");
   const { timeLeft, startCountdown, resetCountdown } =
     useCountdown(COUNTDOWN_SECONDS);
-  const { words, updateWords } = useWords(NUMBER_OF_WORDS);
+  const { words, updateWords } = useWords(NUMBER_OF_WORDS, difficulty);
   const { cursor, typed, clearTyped, totalTyped, resetTotalTyped } = useTypings(
     state !== "finish"
   );
@@ -68,6 +70,10 @@ const useEngine = () => {
       clearTyped();
     }
   }, [clearTyped, areWordsFinished, updateWords, sumErrors]);
+
+  useEffect(() => {
+    updateWords();
+  }, [difficulty]);
 
   return { state, words, typed, errors, restart, timeLeft, totalTyped };
 };
